@@ -5,8 +5,8 @@ function addListItem(count)
 {
 	for (let i = 0; i <count; i++) 
 	{
-		const listItem=document.getElementById("li");
-		listItem.textContent=`item${list.children.length+1}`;
+		const listItem=document.createElement("li");
+		listItem.textContent=`Item ${list.children.length+1}`;
 		list.appendChild(listItem);
 	}
 }
@@ -14,7 +14,7 @@ function addListItem(count)
 addListItem(10);
 
 list.addEventListener("scroll",()=>{
-	if(this.scrollTop+this.clientHeight>=this.scrollHeight)
+	if(list.scrollTop+list.clientHeight>=list.scrollHeight)
 	{
 		addListItem(2);
 	}
